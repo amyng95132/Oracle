@@ -1,0 +1,25 @@
+1     1     1    1    1    1    1    1
+128   64   32   16    8    4    2    1
+How many subnets and hosts per subnet?
+For example, in 11000000, the number 1s give us 2^2 subnets = 4 subnets.
+The number of 0s gives us 2^6 – 2 hosts
+So, 64 - 2 = 62 hosts per subnet. You need to subtract 2 for the subnet address and broadcast address.
+
+If 64 is the subnet number and 127 is the broadcast address, then 65-126 is the valid host range. 
+
+Example 1: Class C 255.255.255.128 (/25)
+Since 128 is 10000000 in binary, there is only 1 bit for subnetting and 7 bits for hosts.
+192.168.10.0 = Network address
+255.255.255.128 = Subnet mask
+-How many subnets? Since 128 is 1 bit on (10000000), the answer would be 2 ^ 1 = 2 subnets.
+-How many hosts per subnet? We have 7 host bits off (10000000), 2 ^ 7 – 2 = 126 hosts.
+-Valid subnets 256 - 128 = 128
+
+Example 2: Class C 255.255.255.192 (/26)
+To subnet the network address 192.168.10.0 using the subnet mask 255.255.255.192.
+192.168.10.0 = Network address
+255.255.255.192 = Subnet mask
+-How many subnet? 128 + 64 = 192 => 2 bits So, 2^2 = 4 subnets
+Hosts per subnet 2 ^ 6 = 64 - 2 = 62
+Valid host 256 - 192 = 64
+
